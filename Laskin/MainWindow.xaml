@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Laskin"
         mc:Ignorable="d"
-        Title="Calculator" Height="500" Width="320">
+        Title="Calculator" Height="560" Width="330">
+
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -14,8 +16,10 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
+
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="65"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -23,53 +27,70 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
+        <DockPanel Grid.ColumnSpan="4" Grid.RowSpan="2">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File" Width="40">
+                    <MenuItem Header="_Standard" Click="MenuStandardClick" />
+                    <MenuItem Header="_Scientific" Click="MenuScientificClick" />
+                    <MenuItem Header="_Temperature" Click="MenuTemperatureClick"/>
+                    <Separator />
+                    <MenuItem Header="_Exit" Click="MenuExitClick"/>
+                </MenuItem>
+            </Menu>
+            <Separator/>
+            <StackPanel>
+                <TextBox x:Name="lblDisplay" IsReadOnly="true" TextAlignment="Right" VerticalAlignment="Top" BorderThickness="0" FontSize="12" Grid.Row="0" Grid.Column="0" Height="39" Width="305"></TextBox>
+                <TextBox x:Name="txtDisplay" IsReadOnly="true" TextAlignment="Right" VerticalAlignment="Bottom" BorderThickness="0" FontSize="25" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Height="52" Width="305">0</TextBox>
+            </StackPanel>
+        </DockPanel>
+
         <!--Number buttons -->
-        <Button x:Name="btn7" Grid.Row="3" Grid.Column="0" Click="btn7_Click">7</Button>
-        <Button x:Name="btn8" Grid.Row="3" Grid.Column="1" Click="btn8_Click">8</Button>
-        <Button x:Name="btn9" Grid.Row="3" Grid.Column="2" Click="btn9_Click">9</Button>
+        <Button x:Name="btn7" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="4" Grid.Column="0" Click="btn7_Click">7</Button>
+        <Button x:Name="btn8" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="4" Grid.Column="1" Click="btn8_Click">8</Button>
+        <Button x:Name="btn9" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="4" Grid.Column="2" Click="btn9_Click">9</Button>
 
-        <Button x:Name="btn4" Grid.Row="4" Grid.Column="0" Click="btn4_Click">4</Button>
-        <Button x:Name="btn5" Grid.Row="4" Grid.Column="1" Click="btn5_Click">5</Button>
-        <Button x:Name="btn6" Grid.Row="4" Grid.Column="2" Click="btn6_Click">6</Button>
+        <Button x:Name="btn4" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="5" Grid.Column="0" Click="btn4_Click">4</Button>
+        <Button x:Name="btn5" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="5" Grid.Column="1" Click="btn5_Click">5</Button>
+        <Button x:Name="btn6" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="5" Grid.Column="2" Click="btn6_Click">6</Button>
 
-        <Button x:Name="btn1" Grid.Row="5" Grid.Column="0" Click="btn1_Click">1</Button>
-        <Button x:Name="btn2" Grid.Row="5" Grid.Column="1" Click="btn2_Click">2</Button>
-        <Button x:Name="btn3" Grid.Row="5" Grid.Column="2" Click="btn3_Click">3</Button>
+        <Button x:Name="btn1" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="6" Grid.Column="0" Click="btn1_Click">1</Button>
+        <Button x:Name="btn2" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="6" Grid.Column="1" Click="btn2_Click">2</Button>
+        <Button x:Name="btn3" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="6" Grid.Column="2" Click="btn3_Click">3</Button>
 
-        <Button x:Name="btn0" Grid.Row="6" Grid.Column="1">0</Button>
-        
+        <Button x:Name="btn0" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="7" Grid.Column="1" Click="btn0_Click">0</Button>
+
         <!--Math Buttons-->
-        <Button x:Name="btnPlus" Grid.Row="2" Grid.Column="3" Click="btnPlus_Click">+</Button>
-        <Button x:Name="btnMinus" Grid.Row="3" Grid.Column="3" Click="btnMinus_Click">-</Button>
-        <Button x:Name="btnTimes" Grid.Row="4" Grid.Column="3" Click="btnTimes_Click">*</Button>
-        <Button x:Name="btnDivide" Grid.Row="5" Grid.Column="3" Click="btnDivide_Click">/</Button>
-        <Button x:Name="btnEquals" Grid.Row="6" Grid.Column="3" Click="btnEquals_Click">=</Button>
-        
+        <Button x:Name="btnPlus" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="3" Grid.Column="3" Click="btnPlus_Click">+</Button>
+        <Button x:Name="btnMinus" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="4" Grid.Column="3" Click="btnMinus_Click">-</Button>
+        <Button x:Name="btnTimes" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="5" Grid.Column="3" Click="btnTimes_Click">*</Button>
+        <Button x:Name="btnDivide" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="6" Grid.Column="3" Click="btnDivide_Click">/</Button>
+        <Button x:Name="btnEquals" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="7" Grid.Column="3" Click="btnEquals_Click">=</Button>
+
         <!--Clear Buttons-->
-        <Button x:Name="btnClearEntry" Grid.Row="2" Grid.Column="0" Click="btnClearEntry_Click">CE</Button>
-        <Button x:Name="btnClear" Grid.Row="2" Grid.Column="1" Click="btnClear_Click">C</Button>
-        <Button x:Name="btnBackspace" Grid.Row="2" Grid.Column="2" Content="&lt;=" HorizontalAlignment="Left" Width="78" Click="btnBackspace_Click" RenderTransformOrigin="0.412,-0.699"></Button>
-        
+        <Button x:Name="btnClearEntry" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="3" Grid.Column="0" Click="btnClearEntry_Click">CE</Button>
+        <Button x:Name="btnClear" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="3" Grid.Column="1" Click="btnClear_Click">C</Button>
+        <Button x:Name="btnBackspace" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="3"  Grid.Column="2" FontFamily="Segoe UI Symbol" Content="&#xE083;" Click="btnBackspace_Click"></Button>
+
         <!--Pos/Neg Button-->
-        <Button x:Name="btnPosNeg" Grid.Row="6" Grid.Column="0" Click="btnPosNeg_Click">+ / -</Button>
-        
+        <Button x:Name="btnPosNeg" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="7" Grid.Column="0" Click="btnPosNeg_Click" Content="±"></Button>
+
         <!--Copy Button-->
-        <Button x:Name="btnCopy" Grid.Row="5" Grid.Column="2" Click="btnCopy_Click">Copy</Button>
-        
-        <!--Percent Button -->
-        <Button x:Name="btnPercent" Grid.Row="1" Grid.Column="0" Click="btnPercent_Click">%</Button>
+        <Button x:Name="btnComma" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="7" Grid.Column="2" Click="btnComma_Click">,</Button>
+
+        <!--Modulus Button -->
+        <Button x:Name="btnModulus" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="2" Grid.Column="0" Click="btnModulus_Click">%</Button>
 
         <!--1/x Button -->
-        <Button x:Name="btn1x" Grid.Row="1" Grid.Column="1" Click="btn1x_Click">1/x</Button>
+        <Button x:Name="btn1x" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="2" Grid.Column="1" Click="btn1x_Click">1/x</Button>
 
         <!--Power Button -->
-        <Button x:Name="btnPower" Grid.Row="1" Grid.Column="2" Click="btnPower_Click">x^2</Button>
+        <Button x:Name="btnPower" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="2" Grid.Column="2" Click="btnPower_Click" Content="x²"></Button>
 
         <!--Sqrt Button -->
-        <Button x:Name="btnSqrt" Grid.Row="1" Grid.Column="3" Click="btnSqrt_Click">sqrt</Button>
+        <Button x:Name="btnSqrt" FontSize="15" FontWeight="Bold" Width="81" Height="73" Grid.Row="2" Grid.Column="3" Click="btnSqrt_Click" Content="√"></Button>
 
         <!--Text box-->
-        <TextBox x:Name="txtDisplay" IsReadOnly="true" TextAlignment="right" VerticalAlignment="Bottom" BorderThickness="0" FontSize="30" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">0</TextBox>
+        <!--<TextBox x:Name="txtDisplay" IsReadOnly="true" TextAlignment="right" VerticalAlignment="Bottom" BorderThickness="0" FontSize="30" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">0</TextBox>-->
     </Grid>
 </Window>

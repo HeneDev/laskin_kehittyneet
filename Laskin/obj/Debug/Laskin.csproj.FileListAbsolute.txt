@@ -13,3 +13,5 @@ C:\Users\Henri\source\repos\Laskin\Laskin\obj\Debug\Laskin.csproj.GenerateResour
 C:\Users\Henri\source\repos\Laskin\Laskin\obj\Debug\Laskin.csproj.CoreCompileInputs.cache
 C:\Users\Henri\source\repos\Laskin\Laskin\obj\Debug\Laskin.exe
 C:\Users\Henri\source\repos\Laskin\Laskin\obj\Debug\Laskin.pdb
+C:\Users\Henri\source\repos\Laskin\Laskin\obj\Debug\Scientific.g.cs
+C:\Users\Henri\source\repos\Laskin\Laskin\obj\Debug\Scientific.baml
