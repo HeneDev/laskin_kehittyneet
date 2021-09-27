@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Henri\source\repos\Laskin\Laskin\obj\Debug\
+C:\Users\pikku\Projects\laskin_kehittyneet\Laskin\obj\Debug\
 Laskin
 none
 false
 DEBUG;TRACE
-C:\Users\Henri\source\repos\Laskin\Laskin\App.xaml
-21668571599
+C:\Users\pikku\Projects\laskin_kehittyneet\Laskin\App.xaml
+3-1144171197
 
-6186530849
+7-616965454
 13-1505183044
-MainWindow.xaml;Scientific.xaml;
+MainWindow.xaml;ScientificWindow.xaml;TemperatureWindow.xaml;
 
 False
 
